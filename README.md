@@ -17,14 +17,14 @@ Welcome to the **PartSelect Chatbot** — a sleek React-based AI assistant tailo
 
 ## 🌐 FRONTEND
 
-### ⚙️ Prerequisites
+### Prerequisites
 
 Ensure the following are installed:
 
 - **Node.js** v18+
 - Backend server running at `http://localhost:5001`
 
-### 📦 Installation
+### Installation
 
 1. **Navigate to the project folder:**
 
@@ -38,7 +38,7 @@ cd partselect-chatbot
 npm install
 ```
 
-### ▶️ Running the Frontend
+### ▶Running the Frontend
 
 ```bash
 npm run dev
@@ -50,14 +50,14 @@ Open browser at: `http://localhost:3000`
 
 ## 🖥️ BACKEND
 
-### ⚙️ Prerequisites
+### Prerequisites
 
 Ensure the following are installed:
 
 - **Python** 3.12+
 - ChromaDB and virtual environment support
 
-### 📦 Installation
+### Installation
 
 1. **Navigate to the backend folder:**
 
@@ -94,7 +94,7 @@ DEEPSEEK_API_KEY=your_deepseek_api_key_here
 DEEPSEEK_BASE_URL=https://api.deepseek.com/v1
 ```
 
-### ▶️ Running the Backend
+### Running the Backend
 
 ```bash
 python app/__init__.py
@@ -104,7 +104,7 @@ python app/__init__.py
 
 ## 🧠 Data Setup & Vector Database
 
-### 🔁 Refreshing ChromaDB & Lookups
+### Refreshing ChromaDB & Lookups
 
 1. **Scrape parts and models:**
 
@@ -129,8 +129,3 @@ python scripts/save_part_id_model.py
 
 ---
 
-## ✨ Features
-
-- ⚡ Instant search and product Q&A for refrigerator & dishwasher parts  
-- 🧩 Smart AI agent backend using DeepSeek LLM + Chroma Vector Matching  
-- 🔧 Modular architecture ready for multi-agent expansion (MCP, A2A)

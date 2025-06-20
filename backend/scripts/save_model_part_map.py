@@ -28,4 +28,4 @@ model_to_parts = {k: sorted(list(v)) for k, v in model_to_parts.items()}
 with open("model_to_parts_map.json", "w") as f:
     json.dump(model_to_parts, f, indent=2, sort_keys=True)
 
-print("✅ Saved model_to_parts_map.json")
+print("Saved model_to_parts_map.json")

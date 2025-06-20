@@ -15,7 +15,7 @@ def load_csv(path):
     return data
 
 def main():
-    # ✅ New client interface — no deprecated error
+    # New client interface — no deprecated error
     client = chromadb.PersistentClient(path=CHROMA_DIR)
 
     try:
@@ -38,7 +38,7 @@ def main():
             ids=[f"model-part-{idx}"]
         )
 
-    print("✅ Ingestion complete.")
+    print("Ingestion complete.")
 
 if __name__ == "__main__":
     main()

@@ -58,10 +58,10 @@ def main():
     collection = client.get_or_create_collection(name="partselect_parts")
 
     # Ingest CSVs
-    #ingest_csv_to_chroma("data/appliance_parts_dishwasher.csv")
-    #ingest_csv_to_chroma("data/appliance_parts_refrigerator.csv")
+    ingest_csv_to_chroma("data/appliance_parts_dishwasher.csv")
+    ingest_csv_to_chroma("data/appliance_parts_refrigerator.csv")
 
-    # print("✅ Ingestion complete.")
+    # print("Ingestion complete.")
 
     # Test query
     query = "Whirlpool fridge ice maker not working"
@@ -70,7 +70,7 @@ def main():
         n_results=5
     )
 
-    print("\n🔍 Sample Query Results:")
+    print("\nSample Query Results:")
     for doc, metadata in zip(results['documents'][0], results['metadatas'][0]):
         print(doc)
         print("----------------")

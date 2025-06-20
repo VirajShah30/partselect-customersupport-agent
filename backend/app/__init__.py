@@ -38,7 +38,7 @@ def is_part_compatible_with_model(model_id: str, part_id: str) -> bool:
 
 def compatibility_check(part_id: str, model_id: str):
     compatible = is_part_compatible_with_model(model_id, part_id)
-    return f"✅ Yes, part {part_id} is compatible with model {model_id}." if compatible else f"❌ No, part {part_id} is not compatible with model {model_id}."
+    return f"Yes, part {part_id} is compatible with model {model_id}." if compatible else f"No, part {part_id} is not compatible with model {model_id}."
 
 def exact_match(part_id: str):
     meta = part_id_map.get(part_id.lower())
@@ -50,7 +50,7 @@ def exact_match(part_id: str):
                 Installation: {meta['installation_difficulty']} in {meta['installation_time']}
                 Video: {meta['video_url']}
                 URL: {meta['url']}"""
-    return "⚠️ Part not found."
+    return "Part not found."
 
 def semantic_lookup(query: str, k=5):
     results = collection.query(query_texts=[query], n_results=k)
@@ -119,7 +119,7 @@ Generate a user-facing response based on this context and classification."""}
         return response.choices[0].message.content
 
     except Exception as e:
-        return f"❌ Error generating final response: {str(e)}"
+        return f"Error generating final response: {str(e)}"
 
 @app.route("/ask", methods=["POST"])
 def ask():

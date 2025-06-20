@@ -25,7 +25,7 @@ def build_part_id_map(collection):
 def exact_match(query, part_id_map):
     for pid, meta in part_id_map.items():
         if pid in query.lower():
-            return f"""📦 Part {meta['part_id']} — {meta['title']}
+            return f"""Part {meta['part_id']} — {meta['title']}
         Brand: {meta['brand']}
         Description: {meta['description']}
         Symptoms: {meta['symptoms']}
@@ -39,7 +39,7 @@ def semantic_lookup(query, collection, embedder, k=3):
     query_vec = embedder.encode(query).tolist()
     results = collection.query(query_embeddings=[query_vec], n_results=k)
 
-    output = "🤖 No exact match found. Here are some possible results:\n"
+    output = "No exact match found. Here are some possible results:\n"
     for doc, meta in zip(results["documents"][0], results["metadatas"][0]):
         output += f"\n🔹 {meta['title']} (Part ID: {meta['part_id']})\n"
         output += f"Brand: {meta['brand']}, Price: {meta['price']}, Availability: {meta['availability']}\n"
@@ -58,16 +58,16 @@ def main():
     print(f"\n🧪 Test Query 1 (Exact Match): {query_1}")
     result_1 = exact_match(query_1, part_id_map)
     if result_1:
-        print("\n🎯 Exact Match Result:")
+        print("\nExact Match Result:")
         print(result_1)
     else:
-        print("\n❌ No exact match found.")
+        print("\nNo exact match found.")
 
     # --- Sample Semantic Query ---
     query_2 = "My Whirlpool fridge is leaking water"
-    print(f"\n🧪 Test Query 2 (Semantic Lookup): {query_2}")
+    print(f"\nTest Query 2 (Semantic Lookup): {query_2}")
     result_2 = semantic_lookup(query_2, collection, embedder)
-    print("\n🤖 Semantic Lookup Result:")
+    print("\nSemantic Lookup Result:")
     print(result_2)
 
 if __name__ == "__main__":
